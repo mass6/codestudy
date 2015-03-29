@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: Codestudy
+        psr4_prefix: Codestudy
+        src_path: app
