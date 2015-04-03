@@ -42,6 +42,7 @@
       <sourceFolder url="file://$MODULE_DIR$/vendor/doctrine/instantiator/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/vendor/phpspec/phpspec/features/bootstrap" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="Codestudy" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

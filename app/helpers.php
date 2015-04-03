@@ -8,12 +8,9 @@ use Illuminate\Support\Facades\Request;
  */
 function isPath($path, $parent = false)
 {
-    if (Request::is($path)){
-        if ($parent == true){
-            return 'opened active';
-        }
-        else return 'active';
-    }
+    if (Request::is($path))
+        return ' active';
+
     return '';
 }
 
@@ -25,10 +22,10 @@ function isPath($path, $parent = false)
  */
 function createExcerpt($text, $max_length = 400)
 {
-    if (strlen(strip_tags($text)) > $max_length)
-    {
-        $max_chunk = substr(strip_tags($text),0,$max_length);
-        return substr($max_chunk,0,strrpos($max_chunk,' '));
+    if (strlen(strip_tags($text)) > $max_length) {
+        $max_chunk = substr(strip_tags($text), 0, $max_length);
+
+        return substr($max_chunk, 0, strrpos($max_chunk, ' '));
     }
 
     return strip_tags($text);
@@ -49,7 +46,7 @@ function gravatar($email, $size = 60)
  */
 function breadcrumbSegment()
 {
-    if (  Request::segment(1) == '' ||  Request::segment(1) == 'blog')
+    if (Request::segment(1) == '' || Request::segment(1) == 'blog')
         return 'blog';
 
     return Request::segment(count(Request::segments()));

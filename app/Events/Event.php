@@ -1,7 +1,8 @@
 <?php namespace Codestudy\Events;
 
-abstract class Event {
+abstract class Event
+{
 
-	//
+    //
 
 }

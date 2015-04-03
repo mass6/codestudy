@@ -15,10 +15,9 @@ class CreateLanguagesTable extends Migration {
 		Schema::create('languages', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('slug');
-            $table->string('url');
-            $table->integer('article_id')->unsigned();
+            $table->string('url')->nullable();
 			$table->timestamps();
 		});
 	}
