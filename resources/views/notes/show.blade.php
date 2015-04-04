@@ -9,10 +9,17 @@
 <h1>{{ $note->title }}</h1>
 <br/>
 <article>{!! $note->body !!}</article>
-
+@unless(empty($note->url))
+    <br/>
+    <p>
+    <h4 class="label label-primary">Resource URL:</h4>
+        <br/>
+        {!! link_to($note->url, $note->url, ['target' => 'blank']) !!}
+    </p>
+@endunless
 <hr/>
 <div class="row note-attributes">
-<h3>Metadeta</h3>
+    <h3>Metadeta</h3>
     <div class="col-md-2">
         <h5>Type</h5>
         <span>{{$note->type}}</span>
