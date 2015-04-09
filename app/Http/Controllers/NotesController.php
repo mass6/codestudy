@@ -137,13 +137,30 @@ class NotesController extends Controller
      */
     private function fetchAttributesDataForSelectFields()
     {
-        $categories = Category::lists('name', 'id');
-        $platforms = Platform::lists('name', 'id');
-        $languages = Language::lists('name', 'id');
-        $frameworks = Framework::lists('name', 'id');
-        $tags = Tag::lists('name', 'id');
+        $categories = $this->getSelectFieldList('Category', 'Code');
+        $platforms = $this->getSelectFieldList('Platform');
+        $languages = $this->getSelectFieldList('Language');
+        $frameworks = $this->getSelectFieldList('Framework');
+        $tags = $this->getSelectFieldList('Tag');
 
         return array($categories, $platforms, $languages, $frameworks, $tags);
+    }
+
+    protected function getSelectFieldList($class, $defaultOption = null, $optionName = 'name', $optionId = 'id')
+    {
+        $class = getAppNamespace() . $class;
+
+        if (class_exists($class))
+        {
+            // Place the default option at the front of the lists array
+            if ($defaultOption)
+            {
+                return array_merge( $class::where($optionName, $defaultOption)->lists($optionName, $optionId),
+                    $class::where($optionName, '!=', $defaultOption)->lists($optionName, $optionId) );
+            }
+            return $class::lists($optionName, $optionId);
+        }
+        return null;
     }
 
     /**
