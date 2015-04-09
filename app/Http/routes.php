@@ -11,7 +11,7 @@ Route::group(['middleware' => 'auth'], function () {
      * Home
      */
     Route::get('/', function () {
-        return view('master');
+        return redirect()->action('NotesController@index');
     });
 
     Route::resource('notes', 'NotesController');

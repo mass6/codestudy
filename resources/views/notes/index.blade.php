@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-2">
         <br/>
-        <a href="{{ route('notes.create') }}"><button class="btn btn-info">New Note</button></a>
+        <a href="{{ route('notes.create') }}"><button class="btn btn-success pull-right">New Note</button></a>
     </div>
 </div>
 <table id="datatable" class="table table-bordered table-striped">
