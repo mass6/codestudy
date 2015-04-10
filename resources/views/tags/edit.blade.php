@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Edit Tag - ' . $tag->name)
+
 @section('content')
 
 <h1>Edit Tag</h1>

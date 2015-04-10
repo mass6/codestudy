@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/railcasts.min.css') }}">
 @stop
 
+@section('title', $note->title)
+
 @section('content')
 
 <h1>{{ $note->title }}</h1>

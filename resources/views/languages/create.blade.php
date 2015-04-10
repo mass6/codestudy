@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'New Language')
+
 @section('content')
 
 <h1>New Language</h1>

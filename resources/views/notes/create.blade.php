@@ -1,11 +1,11 @@
 @extends('master')
 
 @section('page-styles')
-
     <link href="{{ URL::asset('/css/select2.min.css') }}" rel="stylesheet" >
 	<link href="{{ URL::asset('/css/summernote.css') }}" rel="stylesheet">
-
 @stop
+
+@section('title', 'New Note')
 
 @section('content')
 

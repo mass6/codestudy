@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'New Category')
+
 @section('content')
 
 <h1>New Category</h1>

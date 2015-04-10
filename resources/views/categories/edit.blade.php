@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Edit Category - ' . $category->name)
+
 @section('content')
 
 <h1>Edit Category</h1>

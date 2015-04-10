@@ -1,17 +1,10 @@
 <?php namespace Codestudy\Http\Controllers;
 
-use Codestudy\Category;
-use Codestudy\Framework;
+use Codestudy\Note;
 use Codestudy\Http\Requests;
-use Codestudy\Http\Controllers\Controller;
-
 use Codestudy\Http\Requests\CreateNoteRequest;
 use Codestudy\Http\Requests\UpdateNoteRequest;
-use Codestudy\Language;
-use Codestudy\Note;
-use Codestudy\Platform;
 use Codestudy\Services\SearchService;
-use Codestudy\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 

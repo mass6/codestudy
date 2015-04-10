@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Edit Language - ' . $languages->name)
+
 @section('content')
 
 <h1>Edit Language</h1>

@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Edit Platform - ' . $platform->name)
+
 @section('content')
 
 <h1>Edit Platform</h1>

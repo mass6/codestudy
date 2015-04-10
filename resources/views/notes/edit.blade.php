@@ -7,6 +7,8 @@
 
 @stop
 
+@section('title', 'Edit Note - ' . $note->title)
+
 @section('content')
 
 <h1>Edit Note</h1>

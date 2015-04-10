@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Edit Framework - ' . $framework->name)
+
 @section('content')
 
 <h1>Edit Framework</h1>

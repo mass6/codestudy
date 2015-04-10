@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="/assets/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
 @stop
 
+@section('title', 'Frameworks')
+
 @section('content')
 
 <div class="row">
