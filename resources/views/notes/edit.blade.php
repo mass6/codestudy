@@ -11,6 +11,7 @@
 
 @section('content')
 
+
 <h1>Edit Note</h1>
 
     <div class="col-md-10" style="background-color:white">
@@ -31,27 +32,6 @@
 
     <script src="{{ URL::asset('/js/summernote.min.js') }}"></script>
     <script src="{{ URL::asset('/js/select2.full.min.js') }}"></script>
-    <script type="text/javascript">
-
-        (function noteform() {
-            $(".select2").select2({
-              tags: true
-            })
-
-//            $( ".select2" )
-//              .change(function() {
-//                var str = "";
-//                $( ".select2 option:selected" ).each(function() {
-//                  str += $( this ).text() + ", ";
-//                });
-//              });
-
-
-              $('.summernote').summernote({
-                height: 150
-              })
-
-        }());
-    </script>
+    <script src="{{ URL::asset('/js/noteform.js') }}"></script>
 
 @stop

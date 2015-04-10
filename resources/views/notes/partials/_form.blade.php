@@ -16,6 +16,7 @@
                         <div class="form-group">
                             <label class="control-label">Note</label>
                             {!! Form::textarea('body', null, ['class'=>'form-control summernote']) !!}
+                            <a href="#"  id="preview" target="_blank" class="form-control btn btn-success" style="margin-top: 3px;">Preview</a>
                         </div>
                         {!! $errors->first('body', '<span class="label label-danger">:message</span>') !!}
 

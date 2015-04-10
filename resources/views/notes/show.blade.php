@@ -74,12 +74,5 @@
 
 @section('page-scripts')
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>
-        hljs.configure({
-          tabReplace: '    '
-        });
-        $("pre").each(function (i, e) {
-            hljs.highlightBlock(e);
-        });
-    </script>
+    <script src="{{ URL::asset('/js/highlight.init.js') }}"></script>
 @stop
