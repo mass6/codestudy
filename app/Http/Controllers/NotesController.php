@@ -155,8 +155,8 @@ class NotesController extends Controller
             // Place the default option at the front of the lists array
             if ($defaultOption)
             {
-                return array_merge( $class::where($optionName, $defaultOption)->lists($optionName, $optionId),
-                    $class::where($optionName, '!=', $defaultOption)->lists($optionName, $optionId) );
+                return $class::where($optionName, $defaultOption)->lists($optionName, $optionId) +
+                    $class::where($optionName, '!=', $defaultOption)->lists($optionName, $optionId);
             }
             return $class::lists($optionName, $optionId);
         }
