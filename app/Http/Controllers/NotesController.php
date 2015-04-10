@@ -13,6 +13,7 @@ use Codestudy\Platform;
 use Codestudy\Services\SearchService;
 use Codestudy\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class NotesController extends Controller
 {
@@ -61,7 +62,9 @@ class NotesController extends Controller
 
         $this->saveNoteAttributes($request, $this->attributes, $note);
 
-        return redirect()->route('notes.index');
+        Session::flash('message', 'Note has been successfully updated.');
+
+        return redirect()->route('notes.edit', $note->id);
     }
 
     /**
@@ -115,7 +118,9 @@ class NotesController extends Controller
 
         $this->saveNoteAttributes($request, $this->attributes, $note);
 
-        return redirect()->route('notes.index');
+        Session::flash('message', 'Note has been successfully updated.');
+
+        return redirect()->back();
     }
 
     /**

@@ -28,6 +28,16 @@
 
 <div class="container" style="margin-top: 60px;">
     @include('includes/navbar')
+
+    @if(Session::has('message'))
+        <br/>
+        <div class="alert alert-{{ Session::get('type', 'success') }} alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          {{ Session::get('message') }}
+        </div>
+
+    @endif
+
     @yield('content')
 </div>
 
