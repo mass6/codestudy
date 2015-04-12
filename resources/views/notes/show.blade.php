@@ -10,58 +10,74 @@
 
 <h1>{{ $note->title }}</h1>
 <br/>
-<article>{!! $note->body !!}</article>
+<div class="well note-body">
+    <article>{!! $note->body !!}</article>
+</div>
 @unless(empty($note->url))
-    <br/>
-    <p>
-    <h4 class="label label-primary">Resource URL:</h4>
-        <br/>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Resource URL:</h3>
+      </div>
+      <div class="panel-body">
         {!! link_to($note->url, $note->url, ['target' => 'blank']) !!}
-    </p>
+      </div>
+    </div>
 @endunless
-<hr/>
-<div class="row note-attributes">
-    <h3>Metadeta</h3>
-    <div class="col-md-2">
-        <h5>Type</h5>
-        <span>{{$note->type}}</span>
+
+<div class="note-attributes">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Metadeta</h3>
+      </div>
+      <div class="panel-body">
+
+        <div class="col-md-2">
+            <h4 class="note-metedata">Type</h4>
+            <span class="label label-info meta">{{$note->type}}</span>
+        </div>
+        <div class="col-md-2">
+            <h4 class="note-metedata">Category</h4>
+            <span class="label label-info meta">{{$note->category->name}}</span>
+        </div>
+        <div class="col-md-2">
+            <h4 class="note-metedata">Platforms</h4>
+            <ul class="list-unstyled meta">
+                @foreach($note->platforms as $platform)
+                    <li><span class="label label-info">{{ $platform->name }}</span></li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <h4 class="note-metedata">Languages</h4>
+            <ul class="list-unstyled meta">
+                @foreach($note->languages as $language)
+                    <li><span class="label label-info">{{ $language->name }}</span></li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <h4 class="note-metedata">Frameworks</h4>
+            <ul class="list-unstyled meta">
+                @foreach($note->frameworks as $framework)
+                    <li><span class="label label-info">{{ $framework->name }}</span></li>
+                @endforeach
+            </ul>
+        </div>
+        <div class="col-md-2">
+            <h4 class="note-metedata">Tags</h4>
+            <ul class="list-unstyled meta">
+                @foreach($note->tags as $tag)
+                    <li><span class="label label-info">{{ $tag->name }}</span></li>
+                @endforeach
+            </ul>
+        </div>
+
+      </div>
     </div>
-    <div class="col-md-2">
-        <h5>Category</h5>
-        <span>{{$note->category->name}}</span>
-    </div>
-    <div class="col-md-2">
-        <h5>Platforms</h5>
-        <ul>
-            @foreach($note->platforms as $platform)
-                <li>{{ $platform->name }}</li>
-            @endforeach
-        </ul>
-    </div>
-    <div class="col-md-2">
-        <h5>Languages</h5>
-        <ul>
-            @foreach($note->languages as $language)
-                <li>{{ $language->name }}</li>
-            @endforeach
-        </ul>
-    </div>
-    <div class="col-md-2">
-        <h5>Frameworks</h5>
-        <ul>
-            @foreach($note->frameworks as $framework)
-                <li>{{ $framework->name }}</li>
-            @endforeach
-        </ul>
-    </div>
-    <div class="col-md-2">
-        <h5>Tags</h5>
-        <ul>
-            @foreach($note->tags as $tag)
-                <li>{{ $tag->name }}</li>
-            @endforeach
-        </ul>
-    </div>
+
+
+
 </div>
 <hr/>
 <div class="row">

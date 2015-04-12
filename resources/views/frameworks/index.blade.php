@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-2">
         <br/>
-        <a href="{{ route('frameworks.create') }}"><button class="btn btn-info">New Framework</button></a>
+        <a href="{{ route('frameworks.create') }}"><button class="btn btn-success">New Framework</button></a>
     </div>
 </div>
 
@@ -35,7 +35,7 @@
         <td>{{$framework->slug}}</td>
         <td><a href="{{ url($framework->url) }}" target="_blank">{{ $framework->url }}</a></td>
         <td>
-        <a href="{{ route('frameworks.edit', $framework->id)}}" class="btn btn-primary btn-sm pull-left" style="margin-right:5px">Edit</a>
+        <a href="{{ route('frameworks.edit', $framework->id)}}" class="btn btn-warning btn-sm pull-left" style="margin-right:5px">Edit</a>
         {!! Form::open(['route' => ['frameworks.destroy', $framework->id], 'method' => 'DELETE' ]) !!}
             <button type="submit" class="btn btn-danger btn-sm" Onclick='return confirm("Are you sure you want to delete this framework?")'><i class="fa fa-trash"></i>Delete</button>
         {!! Form::close() !!}

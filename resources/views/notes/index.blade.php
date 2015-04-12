@@ -90,7 +90,7 @@
                  @endunless
             </td>
             <td>
-            <a href="{{ route('notes.edit', $note->id)}}" class="btn btn-primary btn-sm pull-left" style="margin-right:5px">Edit</a>
+            <a href="{{ route('notes.edit', $note->id)}}" class="btn btn-warning btn-sm pull-left" style="margin-right:5px">Edit</a>
             {!! Form::open(['route' => ['notes.destroy', $note->id], 'method' => 'DELETE' ]) !!}
                 <button type="submit" class="btn btn-danger btn-sm" Onclick='return confirm("Are you sure you want to delete this note?")'><i class="fa fa-trash"></i> Delete</button>
             {!! Form::close() !!}

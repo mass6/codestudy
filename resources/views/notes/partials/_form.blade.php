@@ -3,7 +3,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="control-label">Title</label>
-                            {!! Form::text('title', null, ['class'=>'form-control', 'id'=>'title', 'placeholder'=>'Note title']) !!}
+                            {!! Form::text('title', null, ['class'=>'form-control input-lg', 'id'=>'title', 'placeholder'=>'Note title']) !!}
                             {!! $errors->first('title', '<span class="label label-danger">:message</span>') !!}
 
                         </div>

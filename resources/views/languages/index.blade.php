@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-2">
         <br/>
-        <a href="{{ route('languages.create') }}"><button class="btn btn-info">New Language</button></a>
+        <a href="{{ route('languages.create') }}"><button class="btn btn-success">New Language</button></a>
     </div>
 </div>
 
@@ -35,7 +35,7 @@
         <td>{{$language->slug}}</td>
         <td><a href="{{ url($language->url) }}" target="_blank">{{ $language->url }}</a></td>
         <td>
-        <a href="{{ route('languages.edit', $language->id)}}" class="btn btn-primary btn-sm pull-left" style="margin-right:5px">Edit</a>
+        <a href="{{ route('languages.edit', $language->id)}}" class="btn btn-warning btn-sm pull-left" style="margin-right:5px">Edit</a>
         {!! Form::open(['route' => ['languages.destroy', $language->id], 'method' => 'DELETE' ]) !!}
             <button type="submit" class="btn btn-danger btn-sm" Onclick='return confirm("Are you sure you want to delete this language?")'><i class="fa fa-trash"></i>Delete</button>
         {!! Form::close() !!}

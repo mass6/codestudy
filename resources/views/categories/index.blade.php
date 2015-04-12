@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-2">
         <br/>
-        <a href="{{ route('categories.create') }}"><button class="btn btn-info">New Category</button></a>
+        <a href="{{ route('categories.create') }}"><button class="btn btn-success">New Category</button></a>
     </div>
 </div>
 
@@ -33,7 +33,7 @@
         <td>{{$category->name}}</td>
         <td>{{$category->slug}}</td>
         <td>
-        <a href="{{ route('categories.edit', $category->id)}}" class="btn btn-primary btn-sm pull-left" style="margin-right:5px">Edit</a>
+        <a href="{{ route('categories.edit', $category->id)}}" class="btn btn-warning btn-sm pull-left" style="margin-right:5px">Edit</a>
         {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE' ]) !!}
             <button type="submit" class="btn btn-danger btn-sm" Onclick='return confirm("Are you sure you want to delete this category?")'><i class="fa fa-trash"></i>Delete</button>
         {!! Form::close() !!}

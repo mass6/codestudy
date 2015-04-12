@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-2">
         <br/>
-        <a href="{{ route('tags.create') }}"><button class="btn btn-info">New Tag</button></a>
+        <a href="{{ route('tags.create') }}"><button class="btn btn-success">New Tag</button></a>
     </div>
 </div>
 
@@ -33,7 +33,7 @@
         <td>{{$tag->name}}</td>
         <td>{{$tag->slug}}</td>
         <td>
-        <a href="{{ route('tags.edit', $tag->id)}}" class="btn btn-primary btn-sm pull-left" style="margin-right:5px">Edit</a>
+        <a href="{{ route('tags.edit', $tag->id)}}" class="btn btn-warning btn-sm pull-left" style="margin-right:5px">Edit</a>
         {!! Form::open(['route' => ['tags.destroy', $tag->id], 'method' => 'DELETE' ]) !!}
             <button type="submit" class="btn btn-danger btn-sm" Onclick='return confirm("Are you sure you want to delete this tag?")'><i class="fa fa-trash"></i>Delete</button>
         {!! Form::close() !!}

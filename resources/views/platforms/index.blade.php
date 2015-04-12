@@ -14,7 +14,7 @@
     </div>
     <div class="col-md-2">
         <br/>
-        <a href="{{ route('platforms.create') }}"><button class="btn btn-info">New Platform</button></a>
+        <a href="{{ route('platforms.create') }}"><button class="btn btn-success">New Platform</button></a>
     </div>
 </div>
 
@@ -35,7 +35,7 @@
         <td>{{$platform->slug}}</td>
         <td>{{$platform->url}}</td>
         <td>
-        <a href="{{ route('platforms.edit', $platform->id)}}" class="btn btn-primary btn-sm pull-left" style="margin-right:5px">Edit</a>
+        <a href="{{ route('platforms.edit', $platform->id)}}" class="btn btn-warning btn-sm pull-left" style="margin-right:5px">Edit</a>
         {!! Form::open(['route' => ['platforms.destroy', $platform->id], 'method' => 'DELETE' ]) !!}
             <button type="submit" class="btn btn-danger btn-sm" Onclick='return confirm("Are you sure you want to delete this platform?")'><i class="fa fa-trash"></i>Delete</button>
         {!! Form::close() !!}
