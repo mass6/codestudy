@@ -9,3 +9,10 @@ h4.note-metedata {font-size: 17px; font-weight: bold; line-height: 7px;}
 .meta {margin-left: 4px;}
 
 div.note-body {border: 1px solid #dddddd; background-color: #ffffff;}
+
+.popover{
+    min-width: 200px;
+    max-width: 800px;
+}
+
+.popover-title {font-weight: bold;}

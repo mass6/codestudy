@@ -2,6 +2,7 @@
 
 @section('page-styles')
     <link rel="stylesheet" type="text/css" href="/assets/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/railcasts.min.css') }}">
 @stop
 
 @section('title', 'Notes')
@@ -34,7 +35,7 @@
         @foreach($notes as $note)
         <tr>
             <td>{{$note->id}}</td>
-            <td><a href="{{ route('notes.show', $note->id) }}">{{$note->title}}</a></td>
+            <td><a href="{{ route('notes.show', $note->id) }}" data-toggle="popover" title="{{ $note->title }}" data-content="{{ $note->body }}">{{$note->title}}</a></td>
             <td>{{$note->type}}</td>
             <td>{{$note->category->name}}</td>
             <td>
@@ -106,12 +107,34 @@
 @section('page-scripts')
     <script type="text/javascript" src="/assets/datatables/media/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/assets/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
 
     <script>
         $(document).ready(function() {
+
+            // Datatables
             $('#datatable').DataTable({
-                "order": [[ 0, "desc" ]]
+                "order": [[ 0, "desc" ]],
+                stateSave: true
             });
-        } );
+
+            // Popovers
+            $('[data-toggle="popover"]').popover({
+                html:   true,
+                title: "Preview",
+                placement: "bottom",
+                trigger: 'hover focus',
+                template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title text text-primary"></h3><div class="popover-content"></div></div>'
+            });
+
+            // Render highlight.js styling to Popover
+            $('a').on('shown.bs.popover', function () {
+                hljs.configure({tabReplace: '    '});
+
+                $("pre").each(function (i, e) {
+                    hljs.highlightBlock(e);
+                });
+            });
+        });
     </script>
 @stop
