@@ -55,9 +55,12 @@ class NotesController extends Controller
 
         $this->saveNoteAttributes($request, $this->attributes, $note);
 
-        Session::flash('message', 'Note has been successfully updated.');
+        Session::flash('message', 'Note has been successfully created.');
 
-        return redirect()->route('notes.edit', $note->id);
+        if ($request->has('continue'))
+            return redirect()->route('notes.edit', $note->id);
+
+        return redirect()->route('notes.index');
     }
 
     /**
@@ -113,7 +116,10 @@ class NotesController extends Controller
 
         Session::flash('message', 'Note has been successfully updated.');
 
-        return redirect()->back();
+        if ($request->has('continue'))
+            return redirect()->route('notes.edit', $note->id);
+
+        return redirect()->route('notes.index');
     }
 
     /**
