@@ -11,7 +11,7 @@
 
 <h1>New Note</h1>
 
-    <div class="col-md-10" style="background-color:white">
+    <div class="col-md-10 note-form">
 
         {!! Form::model($note = new \Codestudy\Note, ['route'=>'notes.store', 'class'=>'horizontal-form']) !!}
 

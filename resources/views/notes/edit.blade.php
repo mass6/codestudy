@@ -14,7 +14,7 @@
 
 <h1>Edit Note</h1>
 
-    <div class="col-md-10" style="background-color:white">
+    <div class="col-md-10 note-form">
 
         {!! Form::model($note, ['route'=>['notes.update', $note->id], 'class'=>'horizontal-form', 'method' => 'PATCH']) !!}
 
