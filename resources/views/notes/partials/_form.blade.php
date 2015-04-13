@@ -110,5 +110,6 @@
             </div>
             <div class="form-actions pull-right">
                 <a href="{{ route('notes.index') }}" class="btn btn-default">Cancel</a>
+                <button type="submit" id="btn-continue" class="btn bg-success"><i class="fa fa-save"></i> Save and Continue</button>
                 <button type="submit" class="btn bg-primary"><i class="fa fa-check"></i> Save</button>
             </div>

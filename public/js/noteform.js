@@ -52,4 +52,9 @@
 
     });
 
+    $("#btn-continue").on('click', function() {
+        var elem = $('<input type="hidden" name="continue" value="continue">');
+        elem.insertAfter($(this));
+    });
+
 }());
