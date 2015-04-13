@@ -3,6 +3,7 @@
 @section('page-styles')
     <link rel="stylesheet" type="text/css" href="/assets/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
     <link rel="stylesheet" href="{{ URL::asset('css/railcasts.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/popovers.css') }}">
 @stop
 
 @section('title', 'Notes')
