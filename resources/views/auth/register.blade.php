@@ -1,4 +1,8 @@
-@extends('app')
+@extends('master')
+
+@section('title')
+    Register
+@overwrite
 
 @section('content')
 <div class="container-fluid">

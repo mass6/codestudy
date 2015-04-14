@@ -1,4 +1,8 @@
-@extends('app')
+@extends('master')
+
+@section('title')
+    Reset Password
+@overwrite
 
 @section('content')
 <div class="container-fluid">
