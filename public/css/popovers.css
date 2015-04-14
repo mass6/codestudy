@@ -24,17 +24,3 @@
  * limitations under the License.
  * ========================================================== */
 
-
-/*************************
- *   Bottom Positions
- *************************/
-
-/** Bottom Left **/
-.popover.bottom {
-    left: 15% !important;
-}
-
-.popover.bottom .arrow {
-    top: -11px;
-    left: 10% !important;
-}
